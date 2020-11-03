@@ -36,10 +36,13 @@ def get_patch_ranges():
      - 3 for the different objects at different depths
      - 1 for the floor
 
+    One patch is defined by a square ROI (Region of Interest) in the
+    image consisting of an array of the boundary indices:
+    [xmin, xmax, ymin, ymax]
     Returns:
-        my_paches(my_patches): 2D array of shape (Num_patches, 4)
+        my_patches(2d-array): 2D array of shape (Num_patches, 4)
     """
-
+    
     raise NotImplementedError
 
 
@@ -47,6 +50,9 @@ def calculate_magnification_factor(diopters,focal_length):
     """
     Calculates the magnification factor for each focus distance
     according to the formulas provided in the jupyter notebook
+    
+    Hint: You either have to divide by the last or first elemennt of u_k! 
+    Figure it out so that it makes sense for your data!
 
     Args:
         diopters(1d-array): numpy array with the diopter
